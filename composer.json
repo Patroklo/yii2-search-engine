@@ -1,0 +1,27 @@
+{
+  "name": "cyneek/yii2-search-engine",
+  "description": "Search Engine for Yii 2",
+  "keywords": [
+    "yii",
+    "yii2",
+    "search"
+  ],
+  "version": "0.0.1",
+  "type": "yii2-extension",
+  "license": "BSD",
+  "authors": [
+    {
+      "name": "Patroklo",
+      "email": "patroklo@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "kartik-v/yii2-widget-select2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "cyneek\\yii2\\searchEngine\\": ""
+    }
+  }
+}
