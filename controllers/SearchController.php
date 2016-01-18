@@ -30,12 +30,15 @@ class SearchController extends Controller
             /** @var ActiveQueryInterface $query */
             $query = $searchModel->searchQuery();
 
-            $selectQuery = [
-                'id' => $searchModel->textKey,
-                'text' => $searchModel->textKey
-            ];
+            $_results = $query->asArray()->all();
 
-            $results = $query->asArray()->select($selectQuery)->all();
+
+            $results = [];
+
+            foreach ($_results as $r)
+            {
+                $results[] = ['id' => $r[$searchModel->textKey], 'text' => $r[$searchModel->textKey]];
+            }
 
             $out['results'] = ((empty($results)) ? $out['results'] : $results);
         }
